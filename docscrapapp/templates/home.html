@@ -1,0 +1,25 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add document</title>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+	
+	<!-- {{ form.as_p }}
+
+	<input class="button" type="submit" value="Save" />
+	<a href="/" class="button">Back</a> -->
+    <input type="file" name='document'>
+    <input class="button"type="submit" value="Upload" />
+    {%	for message in messages %}
+		{{message}} 
+	{% endfor %}
+
+</form>
+</body>
+</html>
+
+{% endblock %}
